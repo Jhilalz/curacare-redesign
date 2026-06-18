@@ -40,11 +40,9 @@
       .from(".hero__kicker", { y: 20, opacity: 0, duration: 0.7 }, "-=0.7")
       .from(".hero__lead", { y: 24, opacity: 0, duration: 0.7 }, "-=0.6")
       .from(".hero__cta", { y: 24, opacity: 0, duration: 0.7 }, "-=0.55")
-      .from(".hero__stats .hstat", { y: 24, opacity: 0, duration: 0.6, stagger: 0.1 }, "-=0.5")
-      .from(".hero__media", { y: 50, opacity: 0, scale: 0.96, duration: 1.1 }, "-=1");
+      .from(".hero__visual .hcard", { y: 40, opacity: 0, scale: 0.94, duration: 0.9, stagger: 0.12 }, "-=0.7");
     // reveal the hero reveal items (override base hidden state)
     document.querySelectorAll(".hero [data-reveal]").forEach(e => e.classList.add("is-revealed"));
-    gsap.to(".hero__media img", { scale: 1, duration: 1.6, ease: "power2.out" });
   }
 
   /* ---------- Custom cursor ---------- */
@@ -93,32 +91,46 @@
   }
 
   /* ---------- Scroll reveals ---------- */
-  const STAGGER_GRIDS = ".trust__grid, .services__grid, .process__steps, .stats__grid, .perks";
-  if (hasGSAP && !reduce) {
-    document.querySelectorAll("[data-reveal]").forEach((el) => {
+  const STAGGER_GRIDS = ".values, .news__grid, .perks, .about__stats, .acc-list, .locs";
+
+  function revealOne(el) {
+    if (el.dataset.revealBound) return;
+    el.dataset.revealBound = "1";
+    gsap.fromTo(el, { y: 36, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.95, ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 88%" },
+      onStart: () => el.classList.add("is-revealed")
+    });
+  }
+
+  function bindReveals(scope) {
+    const root = scope || document;
+    if (!hasGSAP || reduce) {
+      root.querySelectorAll("[data-reveal]").forEach(e => e.classList.add("is-revealed"));
+      return;
+    }
+    root.querySelectorAll("[data-reveal]").forEach((el) => {
       if (el.closest(".hero")) return; // hero handled by intro
       if (el.parentElement && el.parentElement.matches(STAGGER_GRIDS)) return; // handled by grid stagger
-      gsap.fromTo(el, { y: 36, opacity: 0 }, {
-        y: 0, opacity: 1, duration: 0.95, ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 86%" },
-        onStart: () => el.classList.add("is-revealed")
-      });
+      revealOne(el);
     });
-
-    /* Stagger grids nicely */
-    [".trust__grid", ".services__grid", ".process__steps", ".stats__grid", ".perks"].forEach(sel => {
-      const grid = document.querySelector(sel);
-      if (!grid) return;
+    root.querySelectorAll(STAGGER_GRIDS).forEach((grid) => {
+      if (grid.dataset.revealBound) return;
+      grid.dataset.revealBound = "1";
       const kids = grid.children;
       gsap.fromTo(kids, { y: 40, opacity: 0 }, {
         y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.09,
-        scrollTrigger: { trigger: grid, start: "top 82%" },
+        scrollTrigger: { trigger: grid, start: "top 84%" },
         onStart: () => Array.from(kids).forEach(k => k.classList.add("is-revealed"))
       });
     });
-  } else {
-    document.querySelectorAll("[data-reveal]").forEach(e => e.classList.add("is-revealed"));
   }
+
+  bindReveals(document);
+  // Re-bind after i18n re-renders services/news (and on first language apply)
+  document.addEventListener("curacare:langchange", () => {
+    requestAnimationFrame(() => bindReveals(document));
+  });
 
   /* ---------- Marquee loop ---------- */
   const marquee = document.querySelector("[data-marquee]");
@@ -198,8 +210,28 @@
     });
   }
 
-  /* ---------- Refresh ScrollTrigger after language swap (layout shift) ---------- */
-  document.querySelectorAll("[data-lang-btn]").forEach((b) =>
-    b.addEventListener("click", () => { if (typeof ScrollTrigger !== "undefined") setTimeout(() => ScrollTrigger.refresh(), 60); })
-  );
+  /* ---------- Leistungs-Akkordeon (Toggle via Delegation) ---------- */
+  const accHost = document.querySelector("[data-services]");
+  if (accHost) {
+    const setHeight = (acc, open) => {
+      const panel = acc.querySelector(".acc__panel");
+      if (!panel) return;
+      const inner = panel.firstElementChild;
+      panel.style.height = open ? inner.offsetHeight + "px" : "0px";
+    };
+    accHost.addEventListener("click", (e) => {
+      const head = e.target.closest(".acc__head");
+      if (!head || !accHost.contains(head)) return;
+      const acc = head.closest(".acc");
+      const open = !acc.classList.contains("is-open");
+      acc.classList.toggle("is-open", open);
+      head.setAttribute("aria-expanded", String(open));
+      setHeight(acc, open);
+      if (typeof ScrollTrigger !== "undefined") setTimeout(() => ScrollTrigger.refresh(), 520);
+    });
+    // Re-measure open panels on resize / after re-render
+    const remeasure = () => accHost.querySelectorAll(".acc.is-open").forEach(a => setHeight(a, true));
+    addEventListener("resize", remeasure, { passive: true });
+    document.addEventListener("curacare:langchange", () => requestAnimationFrame(remeasure));
+  }
 })();
