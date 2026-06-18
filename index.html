@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">CuraCare — Ambulanter Pflegedienst in Viersen & Kaarst</title>
+  <meta name="description" content="CuraCare — Ihr ambulanter Pflegedienst in Viersen und Kaarst. Rundum. Bestens. Versorgt." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor" data-cursor>
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Page loader -->
+  <div class="loader" data-loader>
+    <div class="loader__inner">
+      <span class="loader__logo">Cura<em>Care</em></span>
+      <div class="loader__bar"><span data-loader-bar></span></div>
+    </div>
+  </div>
+
+  <!-- Three.js ambient background -->
+  <canvas class="bg-canvas" data-three></canvas>
+
+  <!-- Progress bar -->
+  <div class="scroll-progress" data-progress></div>
+
+  <!-- Header -->
+  <header class="header" data-header>
+    <a href="#top" class="brand" aria-label="CuraCare">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 28S4 20.5 4 12.5A6.5 6.5 0 0 1 16 9a6.5 6.5 0 0 1 12 3.5C28 20.5 16 28 16 28Z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand__text">Cura<em>Care</em></span>
+    </a>
+
+    <nav class="nav" data-nav>
+      <a href="#services" data-i18n="nav.services">Leistungen</a>
+      <a href="#about" data-i18n="nav.about">Über uns</a>
+      <a href="#locations" data-i18n="nav.locations">Standorte</a>
+      <a href="#careers" data-i18n="nav.careers">Karriere</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang-btn="de" class="is-active">DE</button>
+        <span>/</span>
+        <button data-lang-btn="en">EN</button>
+      </div>
+      <a href="#contact" class="btn btn--solid btn--sm" data-i18n="nav.cta">Pflege anfragen</a>
+      <button class="burger" data-burger aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__kicker" data-reveal data-i18n="hero.kicker">Ambulanter Pflegedienst · Viersen & Kaarst</p>
+        <h1 class="hero__title">
+          <span class="line"><span data-split data-i18n="hero.title.1">Rundum.</span></span>
+          <span class="line"><span data-split class="accent" data-i18n="hero.title.2">Bestens.</span></span>
+          <span class="line"><span data-split data-i18n="hero.title.3">Versorgt.</span></span>
+        </h1>
+        <p class="hero__lead" data-reveal data-i18n="hero.lead">Ihr ambulanter Pflegedienst, der neue Wege geht — mit Herz, Vertrauen und Zeit für das, was wirklich zählt: den Menschen.</p>
+        <div class="hero__cta" data-reveal>
+          <a href="#contact" class="btn btn--solid" data-cursor-grow><span data-i18n="hero.cta.primary">Kostenlos beraten lassen</span></a>
+          <a href="#services" class="btn btn--ghost" data-cursor-grow><span data-i18n="hero.cta.secondary">Unsere Leistungen</span></a>
+        </div>
+        <div class="hero__stats" data-reveal>
+          <div class="hstat"><span class="hstat__num" data-i18n="hero.stat1.num">24/7</span><span class="hstat__label" data-i18n="hero.stat1.label">Erreichbarkeit im Notfall</span></div>
+          <div class="hstat"><span class="hstat__num" data-i18n="hero.stat2.num">2</span><span class="hstat__label" data-i18n="hero.stat2.label">Standorte für Sie da</span></div>
+          <div class="hstat"><span class="hstat__num" data-i18n="hero.stat3.num">100%</span><span class="hstat__label" data-i18n="hero.stat3.label">Pflege mit Herz</span></div>
+        </div>
+      </div>
+
+      <figure class="hero__media" data-reveal data-tilt>
+        <img data-hero-img src="assets/img/hero.png" alt="Pflegekraft mit Seniorin" loading="eager" />
+        <figcaption class="hero__badge">
+          <span class="dot"></span>
+          <span data-i18n="footer.emergency">24/7 Notfall</span>
+        </figcaption>
+      </figure>
+
+      <a href="#about" class="hero__scroll" data-i18n="hero.scroll">Entdecken</a>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee>
+        <span data-i18n="marquee.1">Grundpflege</span><i>✦</i>
+        <span data-i18n="marquee.2">Behandlungspflege</span><i>✦</i>
+        <span data-i18n="marquee.3">Verhinderungspflege</span><i>✦</i>
+        <span data-i18n="marquee.4">Beratung nach §37.3</span><i>✦</i>
+        <span data-i18n="marquee.5">Hauswirtschaft</span><i>✦</i>
+        <span data-i18n="marquee.6">Betreuungsleistungen</span><i>✦</i>
+      </div>
+    </section>
+
+    <!-- TRUST / ABOUT -->
+    <section class="trust section" id="about">
+      <div class="container">
+        <div class="trust__head">
+          <p class="kicker" data-reveal data-i18n="trust.kicker">Warum CuraCare</p>
+          <h2 class="h2" data-reveal data-i18n="trust.title">Pflege beginnt mit Vertrauen.</h2>
+          <p class="lead" data-reveal data-i18n="trust.lead">Wir glauben, dass gute Pflege mehr ist als ein Beruf.</p>
+        </div>
+        <div class="trust__grid">
+          <article class="tcard" data-reveal data-tilt>
+            <span class="tcard__icon">♥</span>
+            <h3 data-i18n="trust.card1.title">Persönliche Bezugspflege</h3>
+            <p data-i18n="trust.card1.text"></p>
+          </article>
+          <article class="tcard" data-reveal data-tilt>
+            <span class="tcard__icon">↻</span>
+            <h3 data-i18n="trust.card2.title">Flexibel & zuverlässig</h3>
+            <p data-i18n="trust.card2.text"></p>
+          </article>
+          <article class="tcard" data-reveal data-tilt>
+            <span class="tcard__icon">✦</span>
+            <h3 data-i18n="trust.card3.title">Höchste Qualität</h3>
+            <p data-i18n="trust.card3.text"></p>
+          </article>
+          <article class="tcard" data-reveal data-tilt>
+            <span class="tcard__icon">⌂</span>
+            <h3 data-i18n="trust.card4.title">Zuhause statt Heim</h3>
+            <p data-i18n="trust.card4.text"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="services__head">
+          <div>
+            <p class="kicker" data-reveal data-i18n="services.kicker">Unsere Leistungen</p>
+            <h2 class="h2" data-reveal data-i18n="services.title">Pflege, die zu Ihrem Leben passt.</h2>
+          </div>
+          <p class="lead" data-reveal data-i18n="services.lead"></p>
+        </div>
+        <div class="services__grid">
+          <article class="scard" data-reveal data-cursor-grow>
+            <span class="scard__no">01</span>
+            <h3 data-i18n="services.1.title">Grundpflege</h3>
+            <p data-i18n="services.1.text"></p>
+            <span class="scard__more" data-i18n="services.more">Mehr erfahren →</span>
+          </article>
+          <article class="scard" data-reveal data-cursor-grow>
+            <span class="scard__no">02</span>
+            <h3 data-i18n="services.2.title">Behandlungspflege</h3>
+            <p data-i18n="services.2.text"></p>
+            <span class="scard__more" data-i18n="services.more">Mehr erfahren →</span>
+          </article>
+          <article class="scard" data-reveal data-cursor-grow>
+            <span class="scard__no">03</span>
+            <h3 data-i18n="services.3.title">Verhinderungspflege</h3>
+            <p data-i18n="services.3.text"></p>
+            <span class="scard__more" data-i18n="services.more">Mehr erfahren →</span>
+          </article>
+          <article class="scard" data-reveal data-cursor-grow>
+            <span class="scard__no">04</span>
+            <h3 data-i18n="services.4.title">Betreuung & Alltag</h3>
+            <p data-i18n="services.4.text"></p>
+            <span class="scard__more" data-i18n="services.more">Mehr erfahren →</span>
+          </article>
+          <article class="scard" data-reveal data-cursor-grow>
+            <span class="scard__no">05</span>
+            <h3 data-i18n="services.5.title">Pflegeberatung §37.3</h3>
+            <p data-i18n="services.5.text"></p>
+            <span class="scard__more" data-i18n="services.more">Mehr erfahren →</span>
+          </article>
+          <article class="scard scard--accent" data-reveal data-cursor-grow>
+            <span class="scard__no">06</span>
+            <h3 data-i18n="services.6.title">24h-Notfallbereitschaft</h3>
+            <p data-i18n="services.6.text"></p>
+            <span class="scard__more" data-i18n="services.more">Mehr erfahren →</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMOTIONAL IMAGE BREAK / QUOTE -->
+    <section class="break" data-parallax-section>
+      <img data-break-img class="break__img" src="assets/img/hands.png" alt="" data-parallax />
+      <div class="break__overlay"></div>
+      <blockquote class="break__quote container">
+        <p data-reveal data-i18n="quote.text">„Wir behandeln jeden Menschen so, wie wir möchten, dass unsere eigene Familie behandelt wird.“</p>
+        <cite data-reveal data-i18n="quote.author">Das CuraCare Team</cite>
+      </blockquote>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process section">
+      <div class="container">
+        <div class="process__head">
+          <p class="kicker" data-reveal data-i18n="process.kicker">So einfach geht's</p>
+          <h2 class="h2" data-reveal data-i18n="process.title">Ihr Weg zu uns</h2>
+        </div>
+        <div class="process__line"><span data-process-line></span></div>
+        <ol class="process__steps">
+          <li class="pstep" data-reveal><span class="pstep__no">1</span><h3 data-i18n="process.1.title"></h3><p data-i18n="process.1.text"></p></li>
+          <li class="pstep" data-reveal><span class="pstep__no">2</span><h3 data-i18n="process.2.title"></h3><p data-i18n="process.2.text"></p></li>
+          <li class="pstep" data-reveal><span class="pstep__no">3</span><h3 data-i18n="process.3.title"></h3><p data-i18n="process.3.text"></p></li>
+          <li class="pstep" data-reveal><span class="pstep__no">4</span><h3 data-i18n="process.4.title"></h3><p data-i18n="process.4.text"></p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats section">
+      <div class="container">
+        <h2 class="h2 stats__title" data-reveal data-i18n="stats.title">Pflege in Zahlen</h2>
+        <div class="stats__grid">
+          <div class="stat" data-reveal><span class="stat__num"><b data-count="24" data-i18n="stats.1.num">24</b><em data-i18n="stats.1.suffix">/7</em></span><span class="stat__label" data-i18n="stats.1.label"></span></div>
+          <div class="stat" data-reveal><span class="stat__num"><b data-count="2" data-i18n="stats.2.num">2</b><em data-i18n="stats.2.suffix"></em></span><span class="stat__label" data-i18n="stats.2.label"></span></div>
+          <div class="stat" data-reveal><span class="stat__num"><b data-count="12" data-i18n="stats.3.num">12</b><em data-i18n="stats.3.suffix">+</em></span><span class="stat__label" data-i18n="stats.3.label"></span></div>
+          <div class="stat" data-reveal><span class="stat__num"><b data-count="100" data-i18n="stats.4.num">100</b><em data-i18n="stats.4.suffix">%</em></span><span class="stat__label" data-i18n="stats.4.label"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="locations section" id="locations">
+      <div class="container">
+        <div class="locations__head">
+          <p class="kicker" data-reveal data-i18n="locations.kicker">Standorte</p>
+          <h2 class="h2" data-reveal data-i18n="locations.title">In Ihrer Nähe.</h2>
+          <p class="lead" data-reveal data-i18n="locations.lead"></p>
+        </div>
+        <div class="locations__grid">
+          <article class="loc" data-reveal data-tilt>
+            <span class="loc__tag" data-i18n="locations.1.tag">Hauptsitz</span>
+            <h3 data-i18n="locations.1.city">Viersen</h3>
+            <p data-i18n="locations.1.address">Kränkelsweg 34, 41748 Viersen</p>
+            <div class="loc__row"><span data-i18n="locations.phone">Telefon</span><a href="tel:+4921621446360">02162 144 63 60</a></div>
+            <a class="loc__link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Kränkelsweg+34+41748+Viersen" data-i18n="locations.directions">Route planen →</a>
+          </article>
+          <article class="loc" data-reveal data-tilt>
+            <span class="loc__tag" data-i18n="locations.2.tag">Zweigstelle</span>
+            <h3 data-i18n="locations.2.city">Kaarst</h3>
+            <p data-i18n="locations.2.address">Dreeskamp 5, 41564 Kaarst</p>
+            <div class="loc__row"><span data-i18n="locations.phone">Telefon</span><a href="tel:+4921621446361">02162 144 63 61</a></div>
+            <a class="loc__link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Dreeskamp+5+41564+Kaarst" data-i18n="locations.directions">Route planen →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREERS -->
+    <section class="careers section" id="careers">
+      <div class="container careers__inner">
+        <figure class="careers__media" data-reveal data-tilt>
+          <img data-careers-img src="assets/img/portrait.png" alt="" />
+        </figure>
+        <div class="careers__content">
+          <p class="kicker" data-reveal data-i18n="careers.kicker">Karriere</p>
+          <h2 class="h2" data-reveal data-i18n="careers.title">Werden Sie Teil eines Teams, das anders pflegt.</h2>
+          <p class="lead" data-reveal data-i18n="careers.lead"></p>
+          <ul class="perks" data-reveal>
+            <li data-i18n="careers.perk1">Faire Vergütung & Zuschläge</li>
+            <li data-i18n="careers.perk2">Flexible Dienstpläne</li>
+            <li data-i18n="careers.perk3">Fort- & Weiterbildung</li>
+            <li data-i18n="careers.perk4">Modernes Equipment</li>
+            <li data-i18n="careers.perk5">Wertschätzendes Miteinander</li>
+            <li data-i18n="careers.perk6">Unbefristete Verträge</li>
+          </ul>
+          <a href="#contact" class="btn btn--solid" data-reveal data-cursor-grow><span data-i18n="careers.cta">Jetzt bewerben</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta section" id="cta">
+      <div class="container cta__inner" data-reveal>
+        <h2 class="cta__title" data-i18n="cta.title">Lassen Sie uns über Pflege sprechen.</h2>
+        <p class="cta__lead" data-i18n="cta.lead"></p>
+        <div class="cta__actions">
+          <a href="#contact" class="btn btn--light" data-cursor-grow><span data-i18n="cta.button">Beratung anfragen</span></a>
+          <a href="tel:+4917277444777" class="cta__phone">
+            <span class="dot"></span>
+            <span data-i18n="cta.emergency">Notfall-Hotline (24/7)</span>
+            <strong>0172 77 444 77</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__intro">
+          <p class="kicker" data-reveal data-i18n="contact.kicker">Kontakt</p>
+          <h2 class="h2" data-reveal data-i18n="contact.title">Wir sind für Sie da.</h2>
+          <p class="contact__or" data-reveal><span data-i18n="contact.or">oder rufen Sie uns direkt an</span></p>
+          <a href="tel:+4921621446360" class="contact__phone" data-reveal>02162 144 63 60</a>
+          <a href="mailto:info@curacare.de" class="contact__mail" data-reveal>info@curacare.de</a>
+        </div>
+        <form class="form" data-reveal data-form>
+          <div class="field"><input type="text" name="name" required data-i18n-placeholder="contact.name" placeholder="Ihr Name" /></div>
+          <div class="field"><input type="tel" name="phone" data-i18n-placeholder="contact.phone" placeholder="Telefonnummer" /></div>
+          <div class="field"><input type="email" name="email" required data-i18n-placeholder="contact.email" placeholder="E-Mail-Adresse" /></div>
+          <div class="field"><textarea name="message" rows="4" data-i18n-placeholder="contact.message" placeholder="Wie können wir helfen?"></textarea></div>
+          <button type="submit" class="btn btn--solid btn--block" data-cursor-grow><span data-i18n="contact.submit">Nachricht senden</span></button>
+          <p class="form__success" data-form-success data-i18n="contact.success"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="brand__text brand__text--lg">Cura<em>Care</em></span>
+        <p class="footer__tagline" data-i18n="footer.tagline">Rundum. Bestens. Versorgt.</p>
+        <p class="footer__desc" data-i18n="footer.desc"></p>
+      </div>
+      <nav class="footer__col">
+        <h4 data-i18n="footer.nav">Navigation</h4>
+        <a href="#services" data-i18n="nav.services">Leistungen</a>
+        <a href="#about" data-i18n="nav.about">Über uns</a>
+        <a href="#locations" data-i18n="nav.locations">Standorte</a>
+        <a href="#careers" data-i18n="nav.careers">Karriere</a>
+      </nav>
+      <nav class="footer__col">
+        <h4 data-i18n="footer.contact">Kontakt</h4>
+        <a href="tel:+4921621446360">02162 144 63 60</a>
+        <a href="mailto:info@curacare.de">info@curacare.de</a>
+        <span>Kränkelsweg 34, 41748 Viersen</span>
+        <span>Dreeskamp 5, 41564 Kaarst</span>
+      </nav>
+      <nav class="footer__col">
+        <h4 data-i18n="footer.legal">Rechtliches</h4>
+        <a href="#" data-i18n="footer.imprint">Impressum</a>
+        <a href="#" data-i18n="footer.privacy">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 CuraCare GmbH. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></span>
+      <a href="tel:+4917277444777" class="footer__emergency"><span class="dot"></span><span data-i18n="footer.emergency">24/7 Notfall</span> · 0172 77 444 77</a>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
