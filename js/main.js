@@ -1,5 +1,5 @@
 /* ============================================================
-   CuraCare — Interaction & motion layer (GSAP + ScrollTrigger)
+   CultureMed — Interaction & motion layer (GSAP + ScrollTrigger)
    Loader · custom cursor · sticky header · split-text hero ·
    scroll reveals · marquee · parallax · counters · tilt · form
    ============================================================ */

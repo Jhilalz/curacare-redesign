@@ -1,5 +1,5 @@
 /* ============================================================
-   CuraCare — Three.js ambient background
+   CultureMed — Three.js ambient background
    Soft floating "care" particles + drifting organic blobs in
    sage/cream tones. Reacts gently to pointer + scroll.
    Lightweight, fixed behind content, pointer-events: none.
@@ -17,7 +17,7 @@
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.setSize(innerWidth, innerHeight);
 
-  const palette = [0x7fab73, 0xa9c8a0, 0xc9a24b, 0xcfe0ca, 0x5c8d50];
+  const palette = [0x2f6fc0, 0x5a93d8, 0x8fb9e6, 0xbcd6f0, 0x163a72];
 
   // ---- Floating particle field ----
   const COUNT = 220;
@@ -34,7 +34,7 @@
   const sprite = makeDotTexture();
   const pMat = new THREE.PointsMaterial({
     size: 0.5, map: sprite, transparent: true, opacity: 0.55,
-    color: 0x7fab73, depthWrite: false, blending: THREE.AdditiveBlending
+    color: 0x5a93d8, depthWrite: false, blending: THREE.AdditiveBlending
   });
   const points = new THREE.Points(pGeo, pMat);
   scene.add(points);
@@ -61,7 +61,7 @@
   }
 
   const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(5, 8, 6); scene.add(key);
-  scene.add(new THREE.AmbientLight(0xcfe0ca, 0.7));
+  scene.add(new THREE.AmbientLight(0xbcd6f0, 0.7));
 
   // ---- Interaction ----
   const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
@@ -113,8 +113,8 @@
     const ctx = c.getContext("2d");
     const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
     g.addColorStop(0, "rgba(255,255,255,1)");
-    g.addColorStop(0.4, "rgba(200,230,190,0.7)");
-    g.addColorStop(1, "rgba(200,230,190,0)");
+    g.addColorStop(0.4, "rgba(180,210,245,0.7)");
+    g.addColorStop(1, "rgba(180,210,245,0)");
     ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
     const tex = new THREE.CanvasTexture(c); return tex;
   }
