@@ -480,6 +480,8 @@ button { font: inherit; cursor: none; border: none; background: none; }
 .leitbild__quote { max-width: 900px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .leitbild__quote p { font-family: var(--ff-display); font-style: italic; font-size: clamp(1.4rem, 3.2vw, 2.6rem); line-height: 1.22; letter-spacing: -.01em; }
 .leitbild__quote cite { display: block; margin-top: 1.4rem; font-style: normal; font-size: .9rem; letter-spacing: .15em; text-transform: uppercase; color: var(--sage-300); }
+.leitbild__body { max-width: 760px; margin-bottom: clamp(2.5rem, 5vw, 4rem); display: flex; flex-direction: column; gap: .9rem; }
+.leitbild__body p { color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
 .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
 .vcard {
   background: rgba(246,249,253,.06); border: 1px solid rgba(246,249,253,.12);
