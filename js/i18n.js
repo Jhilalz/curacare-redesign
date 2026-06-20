@@ -376,6 +376,9 @@ const SERVICE_DATA = {
     { id: "verhinderung", icon: "clock", badge: "§ 39 SGB XI", title: "Verhinderungspflege",
       desc: "Verlässliche Vertretung, wenn pflegende Angehörige eine Auszeit brauchen — stunden- oder tageweise.",
       items: ["Vertretung bei Urlaub oder Krankheit der Pflegeperson", "Stunden- oder tageweise Versorgung", "Bis zu sechs Wochen pro Kalenderjahr", "Erhalt der gewohnten Pflegequalität", "Flexible & kurzfristige Organisation", "Beratung zur Kostenübernahme"] },
+    { id: "pflegeberatung", icon: "chat", badge: "§ 37.3 SGB V", title: "Pflegeberatung",
+      desc: "Zuhause, im Büro oder per Videoanruf — wir beraten Sie zu Ihrer individuellen Pflegesituation.",
+      items: ["Individuelle Beratung zu Pflegebedarf & Pflegegrad", "Unterstützung beim Pflegegradantrag & Widerspruch", "Erklärung Ihrer Rechte & Leistungsansprüche", "Hilfe bei der Auswahl passender Hilfsmittel", "Auf Wunsch in Ihrer Muttersprache", "Kostenloser Erstberatungstermin"] },
     { id: "privat", icon: "star", badge: "Selbstzahler", title: "Privatleistungen",
       desc: "Individuelle Leistungen ganz nach Ihren Wünschen — ohne ärztliche Verordnung und flexibel buchbar.",
       items: ["Individuelle Leistungen ohne Verordnung", "Hauswirtschaftliche Versorgung & Einkäufe", "Begleit- & Fahrdienste", "Zusätzliche Betreuungsstunden", "Beratung & Organisation rund um die Pflege", "Flexible Pakete nach Ihren Wünschen"] }
@@ -393,6 +396,9 @@ const SERVICE_DATA = {
     { id: "verhinderung", icon: "clock", badge: "§ 39 SGB XI", title: "Respite care",
       desc: "Reliable cover when family caregivers need a break — by the hour or by the day.",
       items: ["Cover during the caregiver's holiday or illness", "Care by the hour or by the day", "Up to six weeks per calendar year", "Maintaining the usual quality of care", "Flexible & short-notice arrangement", "Advice on cost coverage"] },
+    { id: "pflegeberatung", icon: "chat", badge: "§ 37.3 SGB V", title: "Care Consultation",
+      desc: "At home, in the office or by video call — we advise you on your individual care situation.",
+      items: ["Individual advice on care needs & care level", "Support with care level application & appeals", "Explanation of your rights & entitlements", "Help choosing the right aids & services", "Available in your native language on request", "Free initial consultation"] },
     { id: "privat", icon: "star", badge: "Private pay", title: "Private services",
       desc: "Individual services entirely to your wishes — without a prescription and flexibly bookable.",
       items: ["Individual services without a prescription", "Household help & shopping", "Accompaniment & transport services", "Additional hours of care", "Advice & organisation around care", "Flexible packages to your wishes"] }
@@ -410,6 +416,9 @@ const SERVICE_DATA = {
     { id: "verhinderung", icon: "clock", badge: "§ 39 SGB XI", title: "رعاية بديلة",
       desc: "بديل موثوق عندما يحتاج الأقارب إلى استراحة — بالساعة أو باليوم.",
       items: ["البديل أثناء إجازة مقدّم الرعاية أو مرضه", "رعاية بالساعة أو باليوم", "حتى ستة أسابيع في السنة التقويمية", "الحفاظ على جودة الرعاية المعتادة", "تنظيم مرن وسريع", "استشارة حول تغطية التكاليف"] },
+    { id: "pflegeberatung", icon: "chat", badge: "§ 37.3 SGB V", title: "استشارة الرعاية",
+      desc: "في المنزل أو المكتب أو عبر مكالمة فيديو — نقدم لك المشورة حول وضعك الرعائي الفردي.",
+      items: ["نصيحة فردية حول احتياجات ودرجة الرعاية", "الدعم في طلب درجة الرعاية والاعتراض", "شرح حقوقك ومستحقاتك", "المساعدة في اختيار الوسائل المساعدة المناسبة", "بناءً على طلبك بلغتك الأم", "جلسة استشارية أولى مجانية"] },
     { id: "privat", icon: "star", badge: "دفع خاص", title: "خدمات خاصة",
       desc: "خدمات فردية وفق رغباتك تماماً — دون وصفة طبية وقابلة للحجز بمرونة.",
       items: ["خدمات فردية دون وصفة طبية", "المساعدة المنزلية والتسوّق", "خدمات المرافقة والنقل", "ساعات رعاية إضافية", "الاستشارة والتنظيم المتعلق بالرعاية", "باقات مرنة وفق رغباتك"] }
@@ -427,6 +436,9 @@ const SERVICE_DATA = {
     { id: "verhinderung", icon: "clock", badge: "§ 39 SGB XI", title: "Yerine bakım",
       desc: "Bakım veren yakınların molaya ihtiyacı olduğunda güvenilir vekâlet — saatlik veya günlük.",
       items: ["Bakıcının tatili veya hastalığında vekâlet", "Saatlik veya günlük bakım", "Takvim yılında altı haftaya kadar", "Alışılmış bakım kalitesinin korunması", "Esnek & kısa vadeli organizasyon", "Masraf karşılama danışmanlığı"] },
+    { id: "pflegeberatung", icon: "chat", badge: "§ 37.3 SGB V", title: "Bakım Danışmanlığı",
+      desc: "Evde, ofiste veya görüntülü arama ile — bireysel bakım durumunuz hakkında sizi bilgilendiriyoruz.",
+      items: ["Bakım ihtiyacı ve derecesi hakkında bireysel danışmanlık", "Bakım derecesi başvurusu ve itirazda destek", "Hak ve haklarınızın açıklanması", "Uygun yardımcı araçların seçiminde yardım", "Talep üzerine ana dilinizde", "Ücretsiz ilk danışma görüşmesi"] },
     { id: "privat", icon: "star", badge: "Özel ödeme", title: "Özel hizmetler",
       desc: "Tamamen isteklerinize göre bireysel hizmetler — reçetesiz ve esnek rezervasyon.",
       items: ["Reçetesiz bireysel hizmetler", "Ev işleri & alışveriş", "Refakat & ulaşım hizmetleri", "Ek bakım saatleri", "Bakımla ilgili danışmanlık & organizasyon", "İsteklerinize göre esnek paketler"] }
@@ -444,6 +456,9 @@ const SERVICE_DATA = {
     { id: "verhinderung", icon: "clock", badge: "§ 39 SGB XI", title: "Soins de répit",
       desc: "Un relais fiable lorsque les proches aidants ont besoin d'une pause — à l'heure ou à la journée.",
       items: ["Relais en cas de congé ou de maladie de l'aidant", "Soins à l'heure ou à la journée", "Jusqu'à six semaines par année civile", "Maintien de la qualité de soins habituelle", "Organisation flexible & à court terme", "Conseil sur la prise en charge des coûts"] },
+    { id: "pflegeberatung", icon: "chat", badge: "§ 37.3 SGB V", title: "Consultation en soins",
+      desc: "À domicile, au bureau ou par appel vidéo — nous vous conseillons sur votre situation de soins individuelle.",
+      items: ["Conseil individuel sur les besoins & le niveau de soins", "Aide pour la demande de niveau de soins & les recours", "Explication de vos droits & prestations", "Aide au choix des aides techniques adaptées", "Sur demande dans votre langue maternelle", "Premier entretien de conseil gratuit"] },
     { id: "privat", icon: "star", badge: "Paiement privé", title: "Prestations privées",
       desc: "Des prestations individuelles selon vos souhaits — sans prescription et réservables avec souplesse.",
       items: ["Prestations individuelles sans prescription", "Aide ménagère & courses", "Services d'accompagnement & de transport", "Heures de soins supplémentaires", "Conseil & organisation autour des soins", "Forfaits flexibles selon vos souhaits"] }
@@ -461,6 +476,9 @@ const SERVICE_DATA = {
     { id: "verhinderung", icon: "clock", badge: "§ 39 SGB XI", title: "Замещающий уход",
       desc: "Надёжная замена, когда ухаживающим близким нужен отдых — по часам или по дням.",
       items: ["Замена во время отпуска или болезни ухаживающего", "Уход по часам или по дням", "До шести недель в календарный год", "Сохранение привычного качества ухода", "Гибкая и оперативная организация", "Консультация по покрытию расходов"] },
+    { id: "pflegeberatung", icon: "chat", badge: "§ 37.3 SGB V", title: "Консультация по уходу",
+      desc: "Дома, в офисе или по видеозвонку — мы консультируем вас по вашей индивидуальной ситуации ухода.",
+      items: ["Индивидуальная консультация по потребностям и степени ухода", "Помощь с заявлением на степень ухода и апелляцией", "Разъяснение ваших прав и льгот", "Помощь в выборе подходящих вспомогательных средств", "По желанию на вашем родном языке", "Бесплатная первичная консультация"] },
     { id: "privat", icon: "star", badge: "Частная оплата", title: "Частные услуги",
       desc: "Индивидуальные услуги полностью по вашим пожеланиям — без назначения и с гибким бронированием.",
       items: ["Индивидуальные услуги без назначения", "Помощь по хозяйству и покупки", "Услуги сопровождения и перевозки", "Дополнительные часы ухода", "Консультация и организация ухода", "Гибкие пакеты по вашим пожеланиям"] }
@@ -536,7 +554,48 @@ const ICONS = {
   drop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg>',
   heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20S4 14.5 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 5.5-8 11-8 11Z"/></svg>',
   clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
-  star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17.9 6.8 19.6l1-5.8L3.5 9.7l5.9-.9L12 3.5Z"/></svg>'
+  star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17.9 6.8 19.6l1-5.8L3.5 9.7l5.9-.9L12 3.5Z"/></svg>',
+  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'
+};
+
+/* ---------- Payment notes per service ---------- */
+const SERVICE_NOTES = {
+  de: {
+    behandlungspflege: "Wird von der Krankenkasse bezahlt — für Sie kostenlos",
+    grundpflege:       "Wird mit dem Pflegegeld verrechnet",
+    betreuung:         "Entlastungsbetrag 131 € von der Pflegekasse bezahlt",
+    verhinderung:      "Wird mit dem Pflegegeld verrechnet"
+  },
+  en: {
+    behandlungspflege: "Covered by statutory health insurance — free of charge for you",
+    grundpflege:       "Offset against care allowance",
+    betreuung:         "Relief amount of €131 paid by the care fund",
+    verhinderung:      "Offset against care allowance"
+  },
+  ar: {
+    behandlungspflege: "تتحمل تكلفته صندوق التأمين الصحي — مجاني لك",
+    grundpflege:       "يُحسب مقابل بدل الرعاية",
+    betreuung:         "مبلغ الإعفاء 131 € تدفعه صندوق التمريض",
+    verhinderung:      "يُحسب مقابل بدل الرعاية"
+  },
+  tr: {
+    behandlungspflege: "Sağlık sigortası tarafından ödenir — sizin için ücretsiz",
+    grundpflege:       "Bakım ödeneğiyle mahsup edilir",
+    betreuung:         "131 € rahatlama tutarı bakım sandığı tarafından ödenir",
+    verhinderung:      "Bakım ödeneğiyle mahsup edilir"
+  },
+  fr: {
+    behandlungspflege: "Pris en charge par l'assurance maladie — gratuit pour vous",
+    grundpflege:       "Imputé sur l'allocation de soins",
+    betreuung:         "Montant de décharge de 131 € pris en charge par la caisse de soins",
+    verhinderung:      "Imputé sur l'allocation de soins"
+  },
+  ru: {
+    behandlungspflege: "Оплачивается больничной кассой — для вас бесплатно",
+    grundpflege:       "Засчитывается в счёт пособия по уходу",
+    betreuung:         "Сумма разгрузки 131 € оплачивается кассой ухода",
+    verhinderung:      "Засчитывается в счёт пособия по уходу"
+  }
 };
 
 /* ---------- Leistungs-Akkordeon rendern ---------- */
@@ -544,9 +603,11 @@ function renderServices(lang) {
   const host = document.querySelector("[data-services]");
   if (!host) return;
   const data = SERVICE_DATA[lang] || SERVICE_DATA.de;
+  const notes = SERVICE_NOTES[lang] || SERVICE_NOTES.de;
   const openIds = new Set([...host.querySelectorAll(".acc.is-open")].map(n => n.dataset.acc));
   host.innerHTML = data.map((s, i) => {
     const open = openIds.has(s.id) || (openIds.size === 0 && i === 0);
+    const note = notes[s.id];
     return `
     <article class="acc${open ? " is-open" : ""}" data-acc="${s.id}" data-reveal>
       <button class="acc__head" type="button" aria-expanded="${open}">
@@ -560,6 +621,7 @@ function renderServices(lang) {
       <div class="acc__panel">
         <div class="acc__panelInner">
           <p class="acc__desc">${s.desc}</p>
+          ${note ? `<p class="acc__note">✓ ${note}</p>` : ""}
           <ul class="acc__list">
             ${s.items.map(it => `<li>${it}</li>`).join("")}
           </ul>

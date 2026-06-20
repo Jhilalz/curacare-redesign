@@ -517,7 +517,8 @@ button { font: inherit; cursor: none; border: none; background: none; }
 .acc.is-open .acc__chev::after { transform: translate(-50%,-50%) rotate(0); }
 .acc__panel { height: 0; overflow: hidden; transition: height .5s var(--ease); }
 .acc__panelInner { padding: 0 clamp(1.3rem, 3vw, 2.2rem) 1.9rem; padding-inline-start: calc(clamp(1.3rem, 3vw, 2.2rem) + 52px + 1.2rem); }
-.acc__desc { color: var(--muted); margin-bottom: 1.2rem; max-width: 64ch; }
+.acc__desc { color: var(--muted); margin-bottom: .6rem; max-width: 64ch; }
+.acc__note { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; font-weight: 600; color: #1a6b3c; background: #e8f5ed; border-radius: 100px; padding: .3rem .85rem; margin-bottom: 1.1rem; }
 .acc__list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.6rem; }
 .acc__list li { position: relative; padding-inline-start: 1.7rem; font-size: .95rem; color: var(--ink); }
 .acc__list li::before { content: ""; position: absolute; inset-inline-start: 0; top: .5em; width: 8px; height: 8px; border-radius: 50%; background: var(--sage-400); }
