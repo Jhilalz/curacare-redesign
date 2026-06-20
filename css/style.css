@@ -163,7 +163,7 @@ button { font: inherit; cursor: none; border: none; background: none; }
   box-shadow: 0 1px 0 rgba(20,35,63,.08);
 }
 .brand { display: flex; align-items: center; gap: .55rem; font-weight: 700; }
-.brand__logo { height: clamp(40px, 5vw, 52px); width: auto; transition: transform .5s var(--ease); }
+.brand__logo { height: clamp(56px, 7vw, 80px); width: auto; transition: transform .5s var(--ease); }
 .brand:hover .brand__logo { transform: scale(1.04); }
 .brand__mark { color: var(--sage-500); display: grid; place-items: center; transition: transform .5s var(--ease); }
 .brand:hover .brand__mark { transform: scale(1.15) rotate(-8deg); }
